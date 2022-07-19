@@ -48,7 +48,7 @@ namespace BasicAuth_AzureFunction_API
 
         private bool ValidateToken(string header)
         {
-            return true;
+            return false;
         }
     }
 }
