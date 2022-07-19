@@ -1,6 +1,8 @@
+using System;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -39,16 +41,40 @@ namespace BasicAuth_AzureFunction_API
             dynamic data = JsonConvert.DeserializeObject(requestBody);
             name = name ?? data?.name;
             var headers = req.Headers["Authorization"];
-            string responseMessage = string.IsNullOrEmpty(name)
+            if (ValidateToken(headers))
+            {
+                string responseMessage = string.IsNullOrEmpty(name)
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {headers}. This HTTP triggered function executed successfully.";
+                : $"Hello, {name}. This HTTP triggered function executed successfully.";
 
-            return new OkObjectResult(responseMessage);
+                return new OkObjectResult(responseMessage);
+            }
+            else
+            {
+                return new UnauthorizedResult();
+            }
+            
         }
 
         private bool ValidateToken(string header)
         {
-            return false;
+            if (!string.IsNullOrEmpty(header) && header.StartsWith("Basic"))
+            {
+                string encodedUsernamePassword = header.Substring("Basic ".Length).Trim();
+                Encoding encoding = Encoding.GetEncoding("iso-8859-1");
+                string usernamePassword = encoding.GetString(Convert.FromBase64String(encodedUsernamePassword));
+
+                int seperatorIndex = usernamePassword.IndexOf(':');
+
+                var username = usernamePassword.Substring(0, seperatorIndex);
+                var password = usernamePassword.Substring(seperatorIndex + 1);
+                if (username is "Jay" && password is "12345") return true;
+                else return false;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
