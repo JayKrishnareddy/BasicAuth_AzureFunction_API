@@ -2,7 +2,7 @@
 
 ![picture alt](https://github.com/JayKrishnareddy/BasicAuth_AzureFunction_API/blob/master/J1%20(1).png "Basic Authentication For Azure Functions (Open API) .Net 6")
 
-No Database has been used for this project the username and password has been hardcoded.
+No Database has been used for this project the username and password has been hardcoded in the code.
 
 If you want more about this, Do check out my Article 👇🏻
 
