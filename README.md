@@ -6,6 +6,6 @@ No Database has been used for this project the username and password has been ha
 
 If you want more about this, Do check out my Article 👇🏻
 
-[**C# Corner**](https://www.c-sharpcorner.com/article/basic-authentication-for-azure-functions-open-api-net-6/ "C# Corner")
+Read the entire article here - [**C# Corner**](https://www.c-sharpcorner.com/article/basic-authentication-for-azure-functions-open-api-net-6/ "C# Corner")
 
 
