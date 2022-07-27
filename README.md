@@ -4,8 +4,8 @@
 
 No Database has been used for this project the username and password has been hardcoded in the code.
 
-If you want more about this, Do check out my Article 👇🏻
+If you want more about this, Do check out my article published from below 👇🏻
 
-Read the entire article here - [**C# Corner**](https://www.c-sharpcorner.com/article/basic-authentication-for-azure-functions-open-api-net-6/ "C# Corner")
+[**C# Corner**](https://www.c-sharpcorner.com/article/basic-authentication-for-azure-functions-open-api-net-6/ "C# Corner")
 
 
