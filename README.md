@@ -1,4 +1,4 @@
-## Basic Authentication For Azure Functions (Open API) .Net 6.0
+## Basic Authentication For Azure Functions (Open API) .NET
 
 ![picture alt](https://github.com/JayKrishnareddy/BasicAuth_AzureFunction_API/blob/master/J1%20(1).png "Basic Authentication For Azure Functions (Open API) .Net 6")
 
